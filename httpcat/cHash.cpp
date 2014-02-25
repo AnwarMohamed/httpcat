@@ -47,7 +47,7 @@ cHash::cHash(cString rootName,cString itemName,cString keyName,cString valueName
 cHash::~cHash()
 {
 	if (HashArray == NULL)return;
-	for (int i = 0;i < nItems;i++)
+	for (u_int i = 0;i < nItems;i++)
 	{
 		delete HashArray[i].Name;
 		delete HashArray[i].Value;
@@ -261,7 +261,7 @@ cString cXMLHash::GetBinary(int id,DWORD &len)
 cXMLHash::~cXMLHash()
 {
 	if (HashArray == NULL)return;
-	for (int i = 0;i < nItems;i++)
+	for (u_int i = 0;i < nItems;i++)
 	{
 		delete HashArray[i].Name;
 		delete HashArray[i].Value;

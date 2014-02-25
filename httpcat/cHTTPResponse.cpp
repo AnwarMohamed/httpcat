@@ -81,18 +81,18 @@ VOID cHTTPResponse::AddHashedParams(cString* Buffer)
 
 	if (ResponseParams->nItems == 0)
 	{
-		ResponseParams->AddItem(HTTP_RESPONSE_DATE, DateBuffer);
-		ResponseParams->AddItem(HTTP_RESPONSE_CONTENT_LENGTH, cString(PayloadSize));
-		ResponseParams->AddItem(HTTP_RESPONSE_CONNECTION, "close");
+		ResponseParams->AddItem(HTTP_HEADER_DATE, DateBuffer);
+		ResponseParams->AddItem(HTTP_HEADER_CONTENT_LENGTH, cString(PayloadSize));
+		ResponseParams->AddItem(HTTP_HEADER_CONNECTION, HTTP_DEFAULT_CONNECTION);
 	}
 	else
 	{
-		if (!ResponseParams->IsFound(HTTP_RESPONSE_DATE))
-			ResponseParams->AddItem(HTTP_RESPONSE_DATE, DateBuffer);
-		if (!ResponseParams->IsFound(HTTP_RESPONSE_CONTENT_LENGTH))
-			ResponseParams->AddItem(HTTP_RESPONSE_CONTENT_LENGTH, cString(PayloadSize));
-		if (!ResponseParams->IsFound(HTTP_RESPONSE_CONNECTION))
-			ResponseParams->AddItem(HTTP_RESPONSE_CONNECTION, "close");
+		if (!ResponseParams->IsFound(HTTP_HEADER_DATE))
+			ResponseParams->AddItem(HTTP_HEADER_DATE, DateBuffer);
+		if (!ResponseParams->IsFound(HTTP_HEADER_CONTENT_LENGTH))
+			ResponseParams->AddItem(HTTP_HEADER_CONTENT_LENGTH, cString(PayloadSize));
+		if (!ResponseParams->IsFound(HTTP_HEADER_CONNECTION))
+			ResponseParams->AddItem(HTTP_HEADER_CONNECTION, HTTP_DEFAULT_CONNECTION);
 	}
 
 	for (UINT i=0; i<ResponseParams->nItems; i++)

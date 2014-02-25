@@ -50,7 +50,7 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>false</SDLCheck>
@@ -87,6 +87,7 @@
     <ClCompile Include="cHTTPResponse.cpp" />
     <ClCompile Include="cHTTPSConnection.cpp" />
     <ClCompile Include="cHTTPServer.cpp" />
+    <ClCompile Include="cInteractiveConsole.cpp" />
     <ClCompile Include="cList.cpp" />
     <ClCompile Include="cSerializer.cpp" />
     <ClCompile Include="cSession.cpp" />
@@ -100,7 +101,9 @@
     <ClCompile Include="httpcat.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cInteractiveConsole.h" />
     <ClInclude Include="cString.h" />
+    <ClInclude Include="HTTPConstants.h" />
     <ClInclude Include="os.h" />
     <ClInclude Include="SRDFUtils.h" />
     <ClInclude Include="cHTTPClient.h" />

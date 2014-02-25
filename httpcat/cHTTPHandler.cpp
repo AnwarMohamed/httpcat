@@ -9,11 +9,18 @@ cHTTPHandler::cHTTPHandler(USHORT Mode)
 
 cHTTPHandler::~cHTTPHandler()
 {
+	if (TempResponse != NULL) 
+		delete TempResponse;
+
+	if (TempRequest != NULL) 
+		delete TempRequest;
 }
 
 VOID cHTTPHandler::ParseRequest(CHAR* RecievedData, UINT nRecievedData)
 {
-	if (TempRequest != NULL) delete TempRequest;
+	if (TempRequest != NULL) 
+		delete TempRequest;
+
 	TempRequest = new cHTTPRequest(RecievedData, nRecievedData);
 
 	ProcessRequest();
@@ -21,7 +28,9 @@ VOID cHTTPHandler::ParseRequest(CHAR* RecievedData, UINT nRecievedData)
 
 VOID cHTTPHandler::ProcessRequest()
 {
-	if (TempResponse != NULL) delete TempResponse;
+	if (TempResponse != NULL) 
+		delete TempResponse;
+
 	TempResponse = new cHTTPResponse();
 
 	if (TempRequest->isValid)

@@ -1,12 +1,7 @@
 #pragma once
 #include "SRDFUtils.h"
-#include "cHTTPResponse.h"
+#include "HTTPConstants.h"
 #include <regex>
-
-#define HTTP_VERB_GET		"GET"
-#define	HTTP_VERB_POST		"POST"
-#define	HTTP_VERB_HEAD		"HEAD"
-#define	HTTP_VERB_CONNECT	"CONNECT"		//for proxy
 
 class cHTTPRequest
 {
@@ -15,7 +10,12 @@ private:
 	VOID	CommonInit(cHash* Params);
 	UINT	ParseInput(CHAR* InputBuffer, UINT nInputBuffer);
 	
-	CHAR*	TempBuffer;
+	cString*	TmpBuffer;
+	UINT	TmpBufferSize;
+
+	VOID	AddHashedParams(cString* Buffer);
+	VOID	GenerateHeader(CHAR** Buffer, UINT* HeaderSize);
+	VOID	AddPayloadToBuffer(CHAR** Buffer, UINT* BufferSize);
 
 public:
 	cHTTPRequest(cHash* Params);
@@ -32,8 +32,13 @@ public:
 	CHAR*	PayloadBuffer;
 
 	CHAR*	RequestURI;
+	DWORD	RequestURISize;
+	
 	CHAR*	RequestVerb;
 	CHAR*	RequestHTTPVersion;
+	CHAR*	RequestHost;
 
 	cHash*	RequestParams;
+
+	BOOL	MakeRequest(CHAR* Verb, CHAR* HTTPVersion, CHAR* URI, CHAR* Host, cHash* Params, CHAR* PayloadBuffer, UINT PayloadSize);
 };

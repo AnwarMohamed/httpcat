@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source Files\SRDFUtils">
       <UniqueIdentifier>{d7f3d93b-a26e-4202-b10d-805c7898dc2c}</UniqueIdentifier>
     </Filter>
@@ -72,6 +68,9 @@
     <ClCompile Include="httpcat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cInteractiveConsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cSession.h">
@@ -120,6 +119,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="httpcat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cInteractiveConsole.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HTTPConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
